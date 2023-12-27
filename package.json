@@ -1,0 +1,32 @@
+{
+  "name": "sus-copts-scraper",
+  "version": "1.0.0",
+  "description": "Scrape SUS Copts page for Fasts' dates",
+  "private": true,
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "nodemon -e js index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arsanig/nisteia.git"
+  },
+  "author": "Yohanna",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/arsanig/nisteia/issues"
+  },
+  "homepage": "https://github.com/arsanig/nisteia#readme",
+  "engines": {
+    "node": "~16.17.0",
+    "npm": "~8.15.0"
+  },
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.12",
+    "node-fetch": "^3.2.10"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  }
+}

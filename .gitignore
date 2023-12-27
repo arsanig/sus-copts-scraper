@@ -1,0 +1,8 @@
+# Folders
+node_modules/
+
+# Files
+npm-debug.log*
+**/.DS_Store
+events-*.json
+
