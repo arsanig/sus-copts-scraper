@@ -39,3 +39,13 @@ export function splitEvent(input) {
 
     return [mainText, bracketText];
 }
+
+export const convertDateString = (dateStr, year, end) => {
+    let epochTime;
+    if (end) {
+        epochTime = new Date(`${dateStr}, ${year} 23:59:59`).getTime();
+    } else {
+        epochTime = new Date(`${dateStr}, ${year}`).getTime();
+    }
+    return epochTime;
+};

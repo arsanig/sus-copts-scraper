@@ -1,8 +1,7 @@
 import * as cheerio from "cheerio";
 import fetch from "node-fetch";
 import { writeFile } from "fs/promises";
-import { extractAMDate, splitDateRange, splitEvent } from "./helpers/amDate.js";
-import { convertDateString } from "./helpers/date.js";
+import { extractAMDate, splitDateRange, splitEvent, convertDateString } from "./utility.js";
 
 const date = new Date();
 const dateYear = date.getFullYear();
@@ -41,11 +40,11 @@ try {
             endDate = "";
         if (date.includes("–")) {
             [startDate, endDate] = splitDateRange(date);
-            startDate = convertDateString(startDate);
-            endDate = convertDateString(endDate);
+            startDate = convertDateString(startDate, dateYear);
+            endDate = convertDateString(endDate, dateYear, true);
         } else {
-            startDate = convertDateString(date);
-            endDate = convertDateString(date);
+            startDate = convertDateString(date, dateYear);
+            endDate = convertDateString(date, dateYear, true);
         }
 
         (eventTitle.includes("Jonah") || eventTitle.includes("Holy Great")) && type !== "feast"
